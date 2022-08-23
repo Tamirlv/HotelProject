@@ -1,0 +1,27 @@
+<div style="width: 85%; font-family: Arial, Helvetica, sans-serif;">
+    <h1 style="text-align: center;">Hotel By Reservation Sort</h1>
+    <div style="padding: 40px 100px;">
+        <label style="margin-right: 18px;"><strong>Search:</strong></label>
+        <input style="margin-bottom: 10px;" pInputText type="text" [(ngModel)]="filter" (ngModelChange)="filterTable()">
+        <p-table [value]="allHotelsData">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let col of cols">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-hotel>
+                <tr>
+                    <td *ngFor="let col of cols">
+                        <span *ngIf="col.field == 'name'">
+                            {{hotel[col.field]}}
+                        </span>
+                        <img *ngIf="col.field == 'image'" src="{{hotel[col.field]}}" style="width: 25%;">
+
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

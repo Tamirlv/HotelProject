@@ -1,0 +1,46 @@
+<div style="width: 85%; padding: 40px 100px; font-family: Arial, Helvetica, sans-serif;">
+    <div>
+        <h1 style="text-align: center;">Hotel By Reservation Sort</h1>
+        <p-table [value]="allHotels">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let col of totalRes">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-hotel>
+                <tr>
+                    <td *ngFor="let col of totalRes">
+                        <span>
+                            {{hotel[col.field]}}
+                        </span>
+                        <!-- <img *ngIf="col.field == 'image'" src="{{hotel[col.field]}}" style="width: 25%;"> -->
+
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <h1 style="margin-top: 50px; margin-bottom: 20px; text-align: center;">Today's Reservations</h1>
+
+        <p-table [value]="allHotels">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let col of todayRes">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-hotel>
+                <tr>
+                    <td *ngFor="let col of todayRes">
+                        <span>
+                            {{hotel[col.field]}}
+                        </span>
+
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

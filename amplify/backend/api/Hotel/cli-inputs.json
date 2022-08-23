@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "paths": {
+    "/hotel": {
+      "name": "/hotel",
+      "lambdaFunction": "hotelFunction",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/room": {
+      "name": "/room",
+      "lambdaFunction": "roomFunction",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/reservation": {
+      "name": "/reservation",
+      "lambdaFunction": "reservationFunction",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

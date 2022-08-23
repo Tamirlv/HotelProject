@@ -1,0 +1,37 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-lendai-dev-232210-authRole",
+      "UnauthRoleArn": "arn:aws:iam::085291048486:role/amplify-lendai-dev-232210-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::085291048486:role/amplify-lendai-dev-232210-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-lendai-dev-232210-deployment",
+      "UnauthRoleName": "amplify-lendai-dev-232210-unauthRole",
+      "StackName": "amplify-lendai-dev-232210",
+      "StackId": "arn:aws:cloudformation:us-east-2:085291048486:stack/amplify-lendai-dev-232210/c7c6bcd0-20c5-11ed-aaf2-0ae1d011f7d4",
+      "AmplifyAppId": "dg47go2qpa7wj"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dg47go2qpa7wj",
+          "type": "manual"
+        }
+      },
+      "function": {
+        "hotelFunction": {
+          "deploymentBucketName": "amplify-lendai-dev-232210-deployment",
+          "s3Key": "amplify-builds/hotelFunction-495a732f3653354d5654-build.zip"
+        },
+        "roomFunction": {
+          "deploymentBucketName": "amplify-lendai-dev-232210-deployment",
+          "s3Key": "amplify-builds/roomFunction-59507368584f6e6d4a50-build.zip"
+        },
+        "reservationFunction": {
+          "deploymentBucketName": "amplify-lendai-dev-232210-deployment",
+          "s3Key": "amplify-builds/reservationFunction-7a76475547794d6f6f62-build.zip"
+        }
+      }
+    }
+  }
+}

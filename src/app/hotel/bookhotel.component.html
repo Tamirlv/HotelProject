@@ -1,0 +1,11 @@
+<div style="border: solid;">
+
+    <p-dropdown [options]="hotelRooms" [(ngModel)]="roomToBook" optionLabel="name"></p-dropdown>
+    <input pInputText [(ngModel)]="user" type="text" placeholder="User Name">
+    <mat-label style="margin: 2%;">From: </mat-label>
+    <input type="date" [(ngModel)]="from">
+    <mat-label style="margin: 2%;">To: </mat-label>
+    <input type="date" [(ngModel)]="to">
+
+    <button pButton type="button" label="Book!" (click)="bookRoom()"> </button>
+</div>

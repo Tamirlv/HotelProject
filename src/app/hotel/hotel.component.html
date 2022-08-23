@@ -1,0 +1,53 @@
+<div
+    style="font-family: Arial, Helvetica, sans-serif; flex-direction: flexwrap; width: 90%; display: flex; justify-content: center;">
+    <div
+        style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 1000px;">
+        <h1>
+            Welcome To Hotel Management App</h1>
+        <div style="width: 100%;">
+            <h2>Add Hotel</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <input pInputText placeholder="Hotel Name" type="text" [(ngModel)]="hotelName" />
+                <input pInputText placeholder="Hotel Image URL" [(ngModel)]="hotelImage" type="text">
+                <input pInputText placeholder="Hotel Address" [(ngModel)]="hotelAddress" type="text">
+                <button pButton style="width: 200px;" type="button" (click)="addHotel()" label="Add Hotel"> </button>
+            </div>
+        </div>
+
+        <div style="width: 100%;">
+            <h2>Add Room</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <p-dropdown style="width: 220px !important;" [options]="allHotels" [(ngModel)]="hotelToUpdate"
+                    optionLabel="name"></p-dropdown>
+                <input style="width: 220px;" pInputText [(ngModel)]="roomType" type="text" placeholder="Room Type">
+                <input pInputText [(ngModel)]="totalRooms" type="text" placeholder="Total Rooms">
+                <button pButton style="width: 200px;" type="button" (click)="addRoom()" label="Add Room Type"> </button>
+            </div>
+        </div>
+        <div style="width: 100%">
+            <h2>Create Reservation</h2>
+            <div style="margin-bottom: 20px; display: flex; justify-content: space-between;">
+                <p-dropdown [options]="allHotels" [(ngModel)]="hotelToBook" optionLabel="name"
+                    (ngModelChange)="hotelChange()">
+                </p-dropdown>
+                <button style="width: 200px;" pButton type="button" label="Book" (click)="startBooking()"> </button>
+            </div>
+
+            <div style="align-items: center; display: flex; justify-content: space-between;" *ngIf="creating">
+
+                <p-dropdown [options]="hotelRooms" [(ngModel)]="roomToBook" optionLabel="name"></p-dropdown>
+                <input pInputText [(ngModel)]="user" type="text" placeholder="User Name">
+                <!-- <mat-label style="margin: 2%;">From: </mat-label> -->
+                <span>
+                    <input type="date" [(ngModel)]="from">
+                </span>
+                <span>
+                    <input type="date" min="{{from}}" [(ngModel)]="to">
+                </span>
+                <!-- <mat-label style="margin: 2%;">To: </mat-label> -->
+
+                <button style="width: 200px;" pButton type="button" label="Book!" (click)="bookRoom()"> </button>
+            </div>
+        </div>
+    </div>
+</div>
